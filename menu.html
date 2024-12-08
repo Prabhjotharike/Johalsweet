@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Johal Sweet & Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script> <!-- Link to JavaScript -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Side: Fixed Header Menu -->
+        <div class="left-side">
+            <div class="logo">
+                <h1>Johal Sweet & Restaurant</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- Timings Section -->
+            <div class="timings">
+                <h3>Operating Hours</h3>
+                <ul>
+                    <li><strong>Monday to Friday:</strong> 10 AM - 10 PM</li>
+                    <li><strong>Saturday:</strong> 9 AM - 10 PM</li>
+                    <li><strong>Sunday:</strong> 9 AM - 10 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Side: Menu Section with Categories and Search -->
+        <div class="right-side">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search all menu items..." onkeyup="filterMenu()">
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-button" onclick="showMenu('menu')">Main Menu</button>
+                <button class="tab-button" onclick="showMenu('takeout')">Takeout Menu</button>
+                <button class="tab-button" onclick="showMenu('dinein')">Dine-in Menu</button>
+            </div>
+
+            <!-- Main Menu Content -->
+            <div id="menu" class="menu-section">
+                <h2>Main Menu</h2>
+
+                <!-- Sweets -->
+                <div class="category">
+                    <h3>Sweets</h3>
+                    <ul>
+                        <li>Moong Halwa: $10.00/lb</li>
+                        <li>Gajjar Halwa: $9.00/lb</li>
+                        <li>Hot Gulab Jamun: $1.50 each</li>
+                        <li>Ras Malai: $4.00</li>
+                    </ul>
+                </div>
+
+                <!-- Beverages -->
+                <div class="category">
+                    <h3>Beverages</h3>
+                    <ul>
+                        <li>Tea: $2.00</li>
+                        <li>Sweet Lassi: $4.00</li>
+                        <li>Mango Lassi: $5.00</li>
+                        <li>Plain Lassi: $4.00</li>
+                        <li>Salt Lassi: $4.00</li>
+                        <li>Mango Shake: $5.00</li>
+                        <li>Cold Drink: $1.50</li>
+                    </ul>
+                </div>
+
+                <!-- Thali & Add-ons -->
+                <div class="category">
+                    <h3>Thali & Add-ons</h3>
+                    <ul>
+                        <li>Makki di Roti - Sarso da Saag: $10.00</li>
+                        <li>Make di Roti: $3.00</li>
+                        <li>Veg Thali: $10.99</li>
+                        <li>Non-Veg Thali: $11.99</li>
+                    </ul>
+                </div>
+
+                <!-- Snacks -->
+                <div class="category">
+                    <h3>Snacks</h3>
+                    <ul>
+                        <li>Samosa: $1.00 each</li>
+                        <li>Aloo Tikki: $1.00/pc</li>
+                        <li>Bread Pakoda: $3.00</li>
+                        <li>Chana Tikki: $6.99</li>
+                        <li>Chana Samosa: $6.99</li>
+                        <li>Chaat Papdi: $6.99</li>
+                        <li>Bhel Puri: $6.99</li>
+                        <li>Veg Pakoda: $8.00/lb</li>
+                        <li>Paneer Pakora: $11.00/lb</li>
+                        <li>Paratha Plate: $8.00</li>
+                        <li>Chana Kulcha: $9.00</li>
+                    </ul>
+                </div>
+
+                <!-- Appetizers -->
+                <div class="category">
+                    <h3>Appetizers</h3>
+                    <ul>
+                        <li>Momo: $13.99</li>
+                        <li>Chicken Momo: $14.99</li>
+                        <li>Veg Manchurian Dry: $13.99</li>
+                        <li>Tandoori Chicken Leg: $4.00</li>
+                        <li>Fish Pakora: $9.00</li>
+                        <li>Kabab: $13.99</li>
+                        <li>Tandoori Tikka: $13.99</li>
+                        <li>Noodles: $10.99</li>
+                        <li>Chicken Manchurian: $13.99</li>
+                        <li>Chicken Tikka Masala: $13.99</li>
+                        <li>Veg Burger: $6.99</li>
+                        <li>Pav Bhaji: $6.99</li>
+                    </ul>
+                </div>
+
+                <!-- Wraps -->
+                <div class="category">
+                    <h3>Wraps</h3>
+                    <ul>
+                        <li>Paneer Wrap: $8.99</li>
+                        <li>Chicken Tikka Wrap: $9.99</li>
+                        <li>Chicken Kebab Wrap: $9.99</li>
+                    </ul>
+                </div>
+
+                <!-- Rice & Biryani -->
+                <div class="category">
+                    <h3>Rice & Biryani</h3>
+                    <ul>
+                        <li>Jeera Rice: $6.99</li>
+                        <li>Vegetable Biryani: $9.99</li>
+                        <li>Chicken Biryani: $10.99</li>
+                        <li>Goat Biryani: $10.99</li>
+                        <li>Veg + Rice: $7.99</li>
+                        <li>Non-Veg + Rice: $8.99</li>
+                    </ul>
+                </div>
+
+                <!-- Veg Curries -->
+                <div class="category">
+                    <h3>Veg Curries</h3>
+                    <ul>
+                        <li>Mix Veg: $12.99</li>
+                        <li>Dal Tadka: $12.99</li>
+                        <li>Dal Makhani: $12.99</li>
+                        <li>Chana Masala: $12.99</li>
+                        <li>Aloo Gobhi: $12.99</li>
+                        <li>Aloo Gajar: $12.99</li>
+                        <li>Baingan Masala: $12.99</li>
+                        <li>Paneer Veg Mix: $12.99</li>
+                        <li>Aloo Methi: $12.99</li>
+                        <li>Kadhi Pakoda: $12.99</li>
+                        <li>Sarson ka Saag: $12.99</li>
+                        <li>Palak Paneer: $12.99</li>
+                        <li>Shahi Paneer: $12.99</li>
+                        <li>Matar Paneer: $12.99</li>
+                        <li>Paneer Lababdar: $12.99</li>
+                        <li>Veg Manchurian: $12.99</li>
+                        <li>Malai Kofta: $12.99</li>
+                        <li>Chilli Soya: $12.99</li>
+                        <li>Kadah Paneer: $13.99</li>
+                        <li>Chilli Paneer: $13.99</li>
+                        <li>Paneer Bhurji: $13.99</li>
+                    </ul>
+                </div>
+
+                <!-- Non-Veg Curries -->
+                <div class="category">
+                    <h3>Non-Veg Curries</h3>
+                    <ul>
+                        <li>Chicken Curry: $13.99</li>
+                        <li>Goat Curry: $13.99</li>
+                        <li>Butter Chicken: $13.99</li>
+                        <li>Chicken Lababdar: $13.99</li>
+                        <li>Goat Saag: $13.99</li>
+                        <li>Chicken Palak: $13.99</li>
+                        <li>Goat Karachi: $13.99</li>
+                        <li>Karachi Chicken: $13.99</li>
+                        <li>Achari Chicken: $13.99</li>
+                        <li>Chilli Chicken: $13.99</li>
+                    </ul>
+                </div>
+
+                <!-- Breads -->
+                <div class="category">
+                    <h3>Breads</h3>
+                    <ul>
+                        <li>Tawa Roti: $1.25</li>
+                        <li>Bhatura: $2.00</li>
+                        <li>Tandoori Roti: $1.75</li>
+                        <li>Aloo Paratha: $3.00</li>
+                        <li>Gobi Paratha: $3.00</li>
+                        <li>Mix Paratha: $3.50</li>
+                        <li>Paneer Paratha: $4.00</li>
+                        <li>Plain Naan: $2.00</li>
+                        <li>Garlic Naan: $3.00</li>
+                        <li>Butter Naan: $3.50</li>
+                        <li>Aloo Naan: $4.00</li>
+                        <li>Onion Naan: $4.00</li>
+                        <li>Keema Naan: $6.00</li>
+                        <li>Paneer Naan: $6.00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Takeout Menu Content -->
+            <div id="takeout" class="menu-section">
+                <h2>Takeout Menu</h2>
+
+                <!-- Vegetarian Takeout -->
+                <div class="category">
+                    <h3>Vegetarian</h3>
+                    <ul>
+                        <li>Paneer Lababdar: $7.00</li>
+                        <li>Matar Paneer: $7.00</li>
+                        <li>Paneer Bhurji: $10.00</li>
+                        <li>Chilli Paneer: $9.00</li>
+                        <li>Shahi Paneer: $7.99</li>
+                        <li>Malai Kofta: $7.00</li>
+                        <li>Mix Vegetable: $7.00</li>
+                        <li>Aloo Gobhi: $7.00</li>
+                        <li>Aloo Gajar: $7.00</li>
+                        <li>Aloo Eggplant: $7.00</li>
+                        <li>Bhindi Masala: $7.00</li>
+                        <li>Keema Gobi: $7.00</li>
+                        <li>Palak Paneer: $7.00</li>
+                        <li>Chana Masala: $7.00</li>
+                        <li>Aloo Methi: $7.00</li>
+                        <li>Paneer Mix Vegetable: $7.00</li>
+                        <li>Dal Tadka: $7.00</li>
+                        <li>Dal Makhni: $7.00</li>
+                        <li>Kadhi Pakora: $7.00</li>
+                        <li>Jeera Aloo: $7.00</li>
+                        <li>Sarson Ka Saag: $7.00</li>
+                        <li>Veggie Manchurian: $7.00</li>
+                        <li>Veggie Thali: $6.00</li>
+                    </ul>
+                </div>
+
+                <!-- Parantha -->
+                <div class="category">
+                    <h3>Parantha</h3>
+                    <ul>
+                        <li>Aloo Parantha: $2.50</li>
+                        <li>Gobi Parantha: $2.50</li>
+                        <li>Radish Parantha: $2.50</li>
+                        <li>Tandoori Roti: $1.00</li>
+                        <li>Tandoori Naan: $1.50</li>
+                    </ul>
+                </div>
+
+                <!-- Appetizers -->
+                <div class="category">
+                    <h3>Appetizers</h3>
+                    <ul>
+                        <li>Samosa: 3 for $1.00</li>
+                        <li>Paneer Pakora: $7.00/lb</li>
+                        <li>Veg Pakora: $5.00/lb</li>
+                        <li>Aloo Tikki: 2 for $1.00</li>
+                        <li>Chana Tikki: $4.00/plate</li>
+                        <li>Chana Samosa: $4.00/plate</li>
+                        <li>Chana Bhatura: $4.00</li>
+                        <li>Bhatura: $1.00</li>
+                        <li>Chana Puri: $4.00</li>
+                        <li>Puri: $1.00</li>
+                        <li>Chaat Papdi: $4.00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dine-In Menu Content -->
+            <div id="dinein" class="menu-section">
+                <h2>Dine-in Menu</h2>
+
+                <!-- Vegetarian Dine-In -->
+                <div class="category">
+                    <h3>Vegetarian</h3>
+                    <ul>
+                        <li>Chana Puri: $5.00</li>
+                        <li>Parantha: $3.50</li>
+                        <li>Veg Thali: $7.00</li>
+                        <li>Non-Veg Thali: $8.00</li>
+                        <li>Chaat Papdi: $5.00</li>
+                        <li>Chana Kulcha: $5.00</li>
+                        <li>Pani Puri: $5.00</li>
+                    </ul>
+                </div>
+
+                <!-- Chicken Dine-In -->
+                <div class="category">
+                    <h3>Chicken</h3>
+                    <ul>
+                        <li>Chicken Manchurian: $7.99</li>
+                        <li>Tandoori Chicken Leg: $2.50</li>
+                        <li>Chicken Tikka: $10.00</li>
+                        <li>Chicken Kebab: $2.00</li>
+                        <li>Chilli Chicken: $10.00</li>
+                        <li>Chicken Curry: $7.99</li>
+                        <li>Chicken Palak: $8.50</li>
+                        <li>Chicken Lababdar: $8.99</li>
+                        <li>Butter Chicken: $8.50</li>
+                        <li>Chicken Biryani: $7.99</li>
+                        <li>Chicken Roll: $4.00</li>
+                        <li>Chicken Wings (10 pc): $7.00</li>
+                    </ul>
+                </div>
+
+                <!-- Goat Dine-In -->
+                <div class="category">
+                    <h3>Goat</h3>
+                    <ul>
+                        <li>Goat Biryani: $7.99</li>
+                        <li>Goat Curry: $7.99</li>
+                        <li>Goat Palak: $8.50</li>
+                        <li>Goat Karachi: $8.99</li>
+                    </ul>
+                </div>
+
+                <!-- Fish Dine-In -->
+                <div class="category">
+                    <h3>Fish</h3>
+                    <ul>
+                        <li>Fish Pakora: $9.00</li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- End of Right Side -->
+    </div> <!-- End of Container -->
+
+    <script>
+        // JavaScript to filter menu items by search term
+        function filterMenu() {
+            const searchQuery = document.getElementById("search-bar").value.toLowerCase();
+            const menuItems = document.querySelectorAll(".menu-section .category ul li");
+
+            menuItems.forEach(item => {
+                if (item.textContent.toLowerCase().includes(searchQuery)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        // JavaScript to show or hide sections
+        function showMenu(section) {
+            const sections = document.querySelectorAll(".menu-section");
+            sections.forEach(s => {
+                if (s.id === section) {
+                    s.style.display = "block";
+                } else {
+                    s.style.display = "none";
+                }
+            });
+        }
+
+        // Initialize: hide all sections except Main Menu
+        document.addEventListener("DOMContentLoaded", function () {
+            showMenu('menu');
+        });
+    </script>
+</body>
+
+</html>
